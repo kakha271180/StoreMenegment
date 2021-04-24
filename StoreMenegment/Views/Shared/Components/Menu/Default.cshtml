@@ -1,0 +1,24 @@
+﻿@model IEnumerable<StoreMenegment.StoreService.Helper.Menu>
+
+<div>
+    <a asp-action="Index" asp-controller="Home">@Model.SingleOrDefault(m => m.MenuParentId == 1).MenuName</a>
+
+
+</div>
+<div @*class="row"*@ style="display: flex;">
+
+
+
+
+    @for (int i = 2; i <= 6; i++)
+    {
+<div style="padding:10px 10px;">
+
+    <a asp-action="Index"
+       asp-controller="@Model.SingleOrDefault(m => m.MenuParentId == i ).MenuNameEnglish.ToString()"
+       asp-route-LanguageId="@Model.SingleOrDefault(m => m.MenuParentId == i).LanguageId">
+        @Model.SingleOrDefault(m => m.MenuParentId == i).MenuName
+    </a>
+
+</div>}
+</div>

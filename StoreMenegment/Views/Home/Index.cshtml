@@ -1,0 +1,23 @@
+﻿@model IEnumerable<StoreMenegment.StoreService.Helper.ProductSale>
+@{ ViewData["Title"] = "Home Page"; }
+
+<div class="text-center">
+    @*<h1 class="display-4">Welcome</h1>
+        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+        აქ უნდა დაიწეროს პროდუქტის გამოსატანი კოდი მარტო ეს არის დარჩენილი*@
+
+    @foreach (var item in Model)
+    {
+<a asp-action="Privacy" asp-route="ProductSaleId" asp-controller="Home"> <span>@item.ProductName</span></a>
+                <span>@item.SalesDiscount</span>
+                                <span>@item.UnitPrice</span>
+                                                <span>@item.RecordDate</span>
+                                                                <span>@item.Description</span>
+
+                                                                                <span>@item.PictureAdresMain</span>
+                                                                                                <span>@item.Unit</span>
+
+                                                                                                                @for (int i = 0; i < @item.ProductColor.Count; i++)
+                                                                                                                {
+                                                                                                <span>@item.ProductColor[i]</span>}}
+</div>

@@ -1,0 +1,30 @@
+﻿@model StoreMenegment.StoreService.Helper.ProductSale
+
+<div>
+    <div>
+        @Model.ProductName
+    </div>
+
+    <div>
+        @Model.PictureAdresMain
+    </div>
+    <div>
+        @Model.PictureAdres
+    </div>
+    <div>
+        @for (int i = 0; i < @Model.ProductColor.Count; i++)
+        {
+@Model.ProductColor[i]            }
+
+    </div>
+    <div>
+        @Model.SalesDiscount
+    </div>
+    <div>
+        @Model.UnitPrice
+    </div>
+
+    <div>
+        @Model.Description
+    </div>
+</div>
